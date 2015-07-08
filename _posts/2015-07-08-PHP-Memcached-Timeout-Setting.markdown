@@ -1,8 +1,14 @@
 ---
 layout: post
 title:  "PHP Memcached Timeout Setting"
+author: James Tang
 date:   2015-07-08 04:15:30
-categories: jekyll update
+categories:
+  - Code
+  - Notes
+tags:
+  - PHP
+  - Memcached
 ---
 
 PHP Memcached extension does not provides direct method for timeout setting, but can be implemented with [memcached.setoption], e.g.
