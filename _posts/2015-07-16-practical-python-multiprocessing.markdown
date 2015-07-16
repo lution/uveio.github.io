@@ -13,11 +13,16 @@ tags:
 
 ## Question
 
-Calculating the requests for each services from the access logs. The access log format looks like this:
+How to calculate the requests for each services from the access logs efficiently. 
 
- > 172.16.40.10 - - [13/Jul/2015:23:46:07 +0800] "GET /uve/service/myprofile?uid=24696203042323&from=53093010&host_uid=1786844635343&page=1&lang=zh_CN&ip=223.73.254.132 HTTP/1.1" - ^200^ 84 "-" "-" "-" ^"0.003"^ ^"-"^
- > 172.16.40.15 - - [13/Jul/2015:23:54:06 +0800] "GET /uve/service/myprofile?uid=2674542995323&from=51195010&host_uid=2640896377343&page=1&lang=zh_CN&ip=58.22.114.121 HTTP/1.1" - ^200^ 84 "-" "-" "-" ^"0.003"^ ^"-"^
+The access log format looks like this:
+
+> 172.16.40.10 - - [13/Jul/2015:23:46:07 +0800] "GET /uve/service/myprofile?uid=24696203042323&from=53093010&host_uid=1786844635343&page=1&lang=zh_CN&ip=223.73.254.132 HTTP/1.1" - ^200^ 84 "-" "-" "-" ^"0.003"^ ^"-"^
+
+> 172.16.40.15 - - [13/Jul/2015:23:54:06 +0800] "GET /uve/service/myprofile?uid=2674542995323&from=51195010&host_uid=2640896377343&page=1&lang=zh_CN&ip=58.22.114.121 HTTP/1.1" - ^200^ 84 "-" "-" "-" ^"0.003"^ ^"-"^
+ 
  > 172.16.40.19 - - [13/Jul/2015:23:32:24 +0800] "GET /uve/service/item_page?uid=2559544720&mid=3864252290896703&isRecom=-1&from=53093010224&v_p=21&ip=182.150.150.210&wm=3333_2001&appid=6&source=3439264077&ouid=201849903475 HTTP/1.1" - ^200^ 1287 "-" "-" "-" ^"0.114"^ ^"-"^
+ 
  > 172.16.40.25 - - [13/Jul/2015:23:44:42 +0800] "GET /uve/service/hot_tweets?uid=52462459412&from=53095010&host_uid=50551834347994&page=1&lang=zh_CN&ip=222.160.218.74 HTTP/1.1" - ^200^ 84 "-" "-" "-" ^"0.008"^ ^"-"^
 
 The access logs are stored in multiple files, with around 1GB size for each.
@@ -25,7 +30,9 @@ The access logs are stored in multiple files, with around 1GB size for each.
 The results will be saved to a file with the following format:
 
  > /uve/service/myprofile 382388701
+ 
  > /uve/service/item_page 53227923
+ 
  > /uve/service/hot_tweets 160399456
 
 The task should be done on a sigle server with 12Cores/16GB RAM.
@@ -107,7 +114,9 @@ Last, remember to remove the temp files:
 os.system('rm -f ' + TMP_DIR + '/tmp-*')
 {% endhighlight %}
 
-This question is simple but typical, [template] shows the skeleton of this solution.
+This question is simple but typical, this [template] shows the skeleton of this solution:
+
+{% gist fwso/79636c531ddbc3ec1f6e %}
 
 You may noticed the `_print` function, it's just a wrap of the standard print with datetime prefix to the message, but it's very useful in practice. When we are processing large amount of data, the task must be ran in background for a long time, so we have to redirect the standard output to log file, the datetime of the output will help us how long the program actually ran, and it's especially helpful when when runtime error occurred.
 
