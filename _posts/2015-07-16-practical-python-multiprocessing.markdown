@@ -26,7 +26,7 @@ The access log format looks like this:
 
 The access logs are stored in multiple files, with around 1GB size for each.
 
-The results will be saved to a file with the following format:
+The exptected results will be saved to a file with the following format:
 
 {% highlight bash %}
 /uve/service/myprofile 382388701
@@ -57,7 +57,7 @@ def get_parts(date):
     return jobs
 {% endhighlight %}
 
-Then run each group parally, and save the results to separate temp files:
+Next, run each group in parallel, and save the results to separate temp files:
 
 {% highlight python %}
 def do_process(files):
@@ -83,7 +83,7 @@ def do_process(files):
     tmp_fp.close()
 {% endhighlight %}
 
-And then merge the results:
+Then merge the results from each temp file:
 
 {% highlight python %}
 def merge(date):
@@ -107,17 +107,17 @@ def merge(date):
     data_fp.close()
 {% endhighlight %}
 
-Last, remember to remove the temp files:
+Finally, remember to remove the temp files:
 
 {% highlight python %}
 os.system('rm -f ' + TMP_DIR + '/tmp-*')
 {% endhighlight %}
 
-This question is simple but typical, this [template] shows the skeleton of this solution:
+This question is simple but typical, this [template] gist shows the skeleton of this solution:
 
 {% gist fwso/79636c531ddbc3ec1f6e %}
 
-You may noticed the `_print` function, it's just a wrap of the standard print with datetime prefix to the message, but it's very useful in practice. When we are processing large amount of data, the task must be ran in background for a long time, so we have to redirect the standard output to log file, the datetime of the output will help us how long the program actually ran, and it's especially helpful when when runtime error occurred.
+You may noticed the `_print` function, it's just a wrap of the standard print with datetime prefix to the message. It's very useful in practice, especially when running task for in background for a long time, which is the common case for processing a large amount of data.
 
 [multiprocessing]: https://docs.python.org/2/library/multiprocessing.html
 [template]: https://gist.github.com/fwso/79636c531ddbc3ec1f6e
