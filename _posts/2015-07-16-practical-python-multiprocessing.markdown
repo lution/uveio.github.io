@@ -34,11 +34,11 @@ The exptected results will be saved to a file with the following format:
 /uve/service/hot_tweets 160399456
 {% endhighlight %}
 
-The task should be done on a sigle server with 12Cores/16GB RAM.
+The task should be done on a single server with 12Cores/16GB RAM.
 
 ## Solution
 
-In order to finish the task as quick as possible, we have to make full use of the multi-cores, [multiprocessing] will be used to achieve this purpose.
+In order to finish the task as quickly as possible, we have to make full use of the multi-cores, [multiprocessing] will be used to achieve this purpose.
 
 First, split all the log files into ten groups:
 
