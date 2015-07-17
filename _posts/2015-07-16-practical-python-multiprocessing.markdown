@@ -29,9 +29,9 @@ The access logs are stored in multiple files, with around 1GB size for each.
 The results will be saved to a file with the following format:
 
 {% highlight bash %}
-  /uve/service/myprofile 382388701
-  /uve/service/item_page 53227923
-  /uve/service/hot_tweets 160399456
+/uve/service/myprofile 382388701
+/uve/service/item_page 53227923
+/uve/service/hot_tweets 160399456
 {% endhighlight %}
 
 The task should be done on a sigle server with 12Cores/16GB RAM.
