@@ -66,5 +66,3 @@ monitoring. Based on Graphite, we could monitor our data horizontally and vertic
 ![UVE Horizontal/Vertical Data Monitoring](/images/uve-horizontal-vertical-data-monitoring.png)
 
 There are many monitoring tools that work with Graphite, such as [Graphite-beacon](https://github.com/klen/graphite-beacon), [Cabot](https://github.com/arachnys/cabot), for more information, see [Tools That work with Graphite](http://graphite.readthedocs.io/en/latest/tools.html)
-
-
