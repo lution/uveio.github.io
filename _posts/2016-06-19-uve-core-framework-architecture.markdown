@@ -11,8 +11,8 @@ tags:
 
 ## Introduction
 
-Three years ago, I joined the Weibo Recommendation department. At the time, the
-recommendation system was at the very early stage, our services has evolved very
+Three years ago, I joined Weibo Recommendation department. At the time, the
+recommendation system was at the very early stage, our services was evolving very
 quickly. One year later, advertising system has also been integrated with the
 recommendation system. Consequently, a new layer called Unified Value Evaluation
 (UVE) emerged. UVE became the unified endpoint for recommendation and advertising
