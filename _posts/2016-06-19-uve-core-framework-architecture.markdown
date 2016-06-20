@@ -193,4 +193,4 @@ on your requirements.
 
 As described in preceding sections, the UVE Core Framework is dedicated for [Weibo](http://weibo.com) advertising and recommendation services, so it's not
 expected to be a general purpose web framework. But it may be useful for some guys
-have similar requirements with us, or it's can be an example of [OpenResty](https://openresty.org/en/).
+have similar requirements with us, or it can be an example of [OpenResty](https://openresty.org/en/).
