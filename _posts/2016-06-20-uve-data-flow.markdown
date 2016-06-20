@@ -2,9 +2,12 @@
 layout: post
 title:  "UVE Data Flow and Monitoring"
 author: James Tang
-date:   2016-05-08 04:15:30
+date:   2016-06-20 04:01:01
 categories:
   - Architecture
+tags:
+  - "Big Data"
+  - "Data Analysis"
 ---
 
 ## Data Sources
