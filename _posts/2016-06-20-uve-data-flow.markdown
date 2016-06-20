@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "UVE Data Flow and Monitoring"
-author: <a href="https://github.com/fwso">James Tang</a>
+author: James Tang
 date:   2016-06-20 13:00:00
 categories:
   - architecture
