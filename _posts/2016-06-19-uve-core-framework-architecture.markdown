@@ -23,7 +23,7 @@ Unfortunately, UVE service depends on many internal resources such as Redis, RPC
 But PHP is not good at handling TCP connections in persistent way.
 
 After some investigation and tests, we decided to choose [OpenResty](https://openresty.org/en/)(Nginx/Lua) as the solution, for
-it can work with many existing PHP services seamlessly. And finally, the UVE Core Framework
+it can work with many existing PHP services seamlessly. And finally, the [UVE Core Framework](https://github.com/uveio/uve_core)
 in Lua.
 
 ## Features
