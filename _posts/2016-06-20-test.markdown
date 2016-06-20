@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Jekyll test"
+author: James Tang
+date:   2015-07-08 04:15:30
+categories:
+  - Code
+  - Notes
+tags:
+  - PHP
+  - Memcached
+---
+
+## Test
+
+It seems that Jekyll does NOT compile my post
+
+
